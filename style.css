@@ -1,0 +1,185 @@
+/* Reset & base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+ /* Reset & base */
+}
+  html, body {
+    height: 100%;
+    background: radial-gradient(ellipse at center, #000000 0%, #000022 100%);
+    font-family: 'Inter', sans-serif;
+    color: #eee;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  header {
+    padding: 1rem;
+    font-weight: 900;
+    font-size: 1.5rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #0af;
+    text-shadow: 0 0 12px #0af;
+    user-select: none;
+  }
+  #container {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    height: 80vh;
+    margin-bottom: 2rem;
+    background: radial-gradient(circle at center, #04010a, #000011 70%);
+    border-radius: 14px;
+    box-shadow: 0 0 25px #00aaff66;
+    overflow: hidden;
+  }
+  #canvas-wrapper {
+    flex: 2;
+    position: relative;
+    background: #000000;
+    border-radius: 14px 0 0 14px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  canvas {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 14px 0 0 14px;
+    outline-offset: -6px;
+  }
+  #controlPanel {
+    flex: 1;
+    background: linear-gradient(135deg, #001523, #00365f);
+    border-radius: 0 14px 14px 0;
+    padding: 24px 32px;
+    box-shadow: inset 0 0 25px #00aaff55;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    color: #66ccffcc;
+    font-weight: 600;
+    user-select: none;
+    overflow-y: auto;
+  }
+  #controlPanel h2 {
+    margin-bottom: 16px;
+    font-size: 1.5rem;
+    font-weight: 900;
+    text-align: center;
+    color: #00d9ff;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-shadow: 0 0 12px #06cfffaa;
+    user-select: text;
+  }
+  .speed-control {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 1rem;
+    color: #88ddffee;
+  }
+  .speed-control label {
+    font-weight: 700;
+  }
+  .speed-control input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 10px;
+    border-radius: 6px;
+    background: linear-gradient(90deg, #00d9ff, #0068ca);
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .speed-control input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance:none;
+    appearance:none;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #00cfff;
+    cursor: pointer;
+    border: 2px solid #008bb1;
+    box-shadow: 0 0 14px #00ccffbb;
+    margin-top: -7px;
+    transition: background-color 0.3s ease;
+  }
+  .speed-control input[type="range"]:hover::-webkit-slider-thumb {
+    background: #009ad9;
+    box-shadow: 0 0 20px #00bbffdd;
+  }
+  .speed-control input[type="range"]::-moz-range-thumb {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #00cfff;
+    cursor: pointer;
+    border: 2px solid #008bb1;
+    box-shadow: 0 0 14px #00ccffbb;
+    transition: background-color 0.3s ease;
+  }
+  .speed-control input[type="range"]:hover::-moz-range-thumb {
+    background: #009ad9;
+    box-shadow: 0 0 20px #00bbffdd;
+  }
+  #pauseResumeButton {
+    margin-top: auto;
+    padding: 1rem;
+    font-weight: 900;
+    font-size: 1.2rem;
+    background: linear-gradient(45deg, #00d9ff, #0068ca);
+    border: none;
+    border-radius: 32px;
+    color: #001919;
+    cursor: pointer;
+    box-shadow: 0 0 22px #00ccffbb;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    user-select: none;
+    text-transform: uppercase;
+  }
+  #pauseResumeButton:hover {
+    background: linear-gradient(45deg, #019aff, #005ba1);
+    box-shadow: 0 0 28px #0099ffdd;
+    color: #e0f7ff;
+  }
+  /* Scrollbar styling */
+  #controlPanel::-webkit-scrollbar {
+    width: 10px;
+  }
+  #controlPanel::-webkit-scrollbar-thumb {
+    background: #00aaffdd;
+    border-radius: 12px;
+  }
+  #controlPanel::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.15);
+    border-radius: 12px;
+  }
+  /* Responsive */
+  @media (max-width: 900px){
+    #container {
+        flex-direction: column;
+        height: 70vh;
+    }
+    #canvas-wrapper {
+        width: 100%;
+        height: 60vh;
+        border-radius: 16px;
+        box-shadow: 0 0 28px #00aaff99;
+    }
+    #controlPanel {
+        width: 100%;
+        height: auto;
+        border-radius: 0 0 16px 16px;
+        padding: 16px 20px;
+    }
+  }
+
